@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>New Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>LAB 1 - ESBII</h1>
+<h4>IT13008642</h4>
+<h4>P.W.J.B Polkotuwa</h4>
+<h4>Weekday</h4>
+<h1>1) Create an amazon windows instance in amazon cloud</h1>
+<h3>step1 ### -<em>Accesing amazon EC2</em></h3>
+<blockquote>
+<p>After we signing into  the 
+AWS Managment console we can acccess amazon EC2 by clicking EC2 from the console home page.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/windows/blob/master/Step%201-Select%20EC2.jpg" title="step1">https://github.com/Polkotuwa/windows/blob/master/Step%201-Select%20EC2.jpg</a></p>
+<h3>step2 ###-Select launch instance button.</h3>
+<blockquote>
+<p>From the Amazon EC2 Console dashboard, click launch instance.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/windows/blob/master/Step%202-Select%20launch%20instance%20buttton.jpg" title="step2">https://github.com/Polkotuwa/windows/blob/master/Step%202-Select%20launch%20instance%20buttton.jpg</a></p>
+<h3>step3 ### - Choose an Amazon machine image.</h3>
+<blockquote>
+<p>we have to select AMI from Amazon AMI page.for creating windows instances we have to select one of Microsoft windows server AMI's.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/windows/blob/master/Step%203-Select%20Microsoft%20windows%20server.jpg" title="step3">https://github.com/Polkotuwa/windows/blob/master/Step%203-Select%20Microsoft%20windows%20server.jpg</a></p>
+<h3>step4 ### - Choose instance type</h3>
+<blockquote>
+<p>After choosed AMI we have to select instance type and click configure instance details button.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/windows/blob/master/Step%204-Click%20configure%20instance%20details.jpg" title="step4">https://github.com/Polkotuwa/windows/blob/master/Step%204-Click%20configure%20instance%20details.jpg</a></p>
+<h3>step5 ### - Click Add Storage button</h3>
+<blockquote>
+<p>In Configure instance page click add storage button.but dont change any details there.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/windows/blob/master/step%205-%20Click%20Add%20storage.jpg" title="step5">https://github.com/Polkotuwa/windows/blob/master/step%205-%20Click%20Add%20storage.jpg</a></p>
+<h3>step6 ### - Click tag instance.</h3>
+<blockquote>
+<p>In add storage page click tag instance.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/windows/blob/master/step%206-%20Click%20Tag%20instance.jpg" title="step6">https://github.com/Polkotuwa/windows/blob/master/step%206-%20Click%20Tag%20instance.jpg</a></p>
+<h3>step7 ### - Click review and launch.</h3>
+<blockquote>
+<p>click review and launch in configure security group page.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/windows/blob/master/step%207-%20Click%20review%20and%20launch.jpg" title="step7">https://github.com/Polkotuwa/windows/blob/master/step%207-%20Click%20review%20and%20launch.jpg</a></p>
+<h3>step8 ### - click launch button.</h3>
+<blockquote>
+<p>Click launch button in review page.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/windows/blob/master/step%208-%20before%20%20launch%20instance.jpg" title="step8">https://github.com/Polkotuwa/windows/blob/master/step%208-%20before%20%20launch%20instance.jpg</a></p>
+<h3>step9 ### - Create a key pair</h3>
+<blockquote>
+<p>To secure login information for instances AWS use public-key cryptography.so we have to create private key when we launch our instances.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/windows/blob/master/step%209-%20Create%20a%20new%20key%20pair.jpg" title="step9">https://github.com/Polkotuwa/windows/blob/master/step%209-%20Create%20a%20new%20key%20pair.jpg</a></p>
+<h3>step10 ### - Download keypair</h3>
+<blockquote>
+<p>when we login to windows instance using RDP we have to provide the administrator password for the windows instance.to obtain that administrator password we have to give private key.so we have to download it.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/windows/blob/master/step%2010-download%20key%20pair.jpg" title="step10">https://github.com/Polkotuwa/windows/blob/master/step%2010-download%20key%20pair.jpg</a></p>
+<h3>step11 ### - Launch instances</h3>
+<blockquote>
+<p>By clicking launch button we can launch the instances.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/windows/blob/master/step%2011-Launching%20instances.jpg" title="step11">https://github.com/Polkotuwa/windows/blob/master/step%2011-Launching%20instances.jpg</a></p>
+<h3>step12 ### - view instances.</h3>
+<blockquote>
+<p>To connect the instances we want ip address.we can get those details in view instance page.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/windows/blob/master/step12-View%20instances.jpg" title="step12">https://github.com/Polkotuwa/windows/blob/master/step12-View%20instances.jpg</a></p>
+<h3>step13 ### - connect to instance</h3>
+<blockquote>
+<p>To connect we have to click connect button and also we need administrator password.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/windows/blob/master/step13-Connect.jpg" title="step13">https://github.com/Polkotuwa/windows/blob/master/step13-Connect.jpg</a></p>
+<h3>step14/15 ### - Decrypting the password</h3>
+<blockquote>
+<p>To decrypt the password we have to give private key pair which consists the Administrator password.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/windows/blob/master/step14-Get%20Passowrd.jpg" title="step14">https://github.com/Polkotuwa/windows/blob/master/step14-Get%20Passowrd.jpg</a></p>
+<p><a href="https://github.com/Polkotuwa/windows/blob/master/step15-select%20Pemfile.jpg" title="step15">https://github.com/Polkotuwa/windows/blob/master/step15-select%20Pemfile.jpg</a></p>
+<h3>step16 ###  - After decrypting the password</h3>
+<blockquote>
+<p>After decryption we can get the user-name and password for our instance.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/windows/blob/master/step16-After%20Decrypting%20password.jpg" title="step16">https://github.com/Polkotuwa/windows/blob/master/step16-After%20Decrypting%20password.jpg</a></p>
+<h3>step17 ### - Run windows instance using remote desktop connection.</h3>
+<blockquote>
+<p>We can  instance using remote desktop connection for that we have to provide ip address of the instance.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/windows/blob/master/step17-Connect%20from%20remote%20desktop%20connection.jpg" title="step17">https://github.com/Polkotuwa/windows/blob/master/step17-Connect%20from%20remote%20desktop%20connection.jpg</a></p>
+<h3>step 18 ### - Provide username and password for remote desktop connection.</h3>
+<blockquote>
+<p>We have to provide admintrator username and password to connect  with instance using remote desktop connection.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/windows/blob/master/step18-give%20username%20and%20password.jpg" title="step18">https://github.com/Polkotuwa/windows/blob/master/step18-give%20username%20and%20password.jpg</a></p>
+<h3>final step ### - Windows instance.</h3>
+<blockquote>
+<p>Finally we can view the windows instance.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/windows/blob/master/final%20step-windows%20instance.jpg" title="finalstep">https://github.com/Polkotuwa/windows/blob/master/final%20step-windows%20instance.jpg</a></p>
+<h1>2)Create an amazon linux instance in amazon cloud</h1>
+<h3>step1 ### - Accessing amazon EC2</h3>
+<blockquote>
+<p>After we login in to the amazon aws console we have to select amazon ec2 by clicking EC2 from the home page.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/linux/blob/master/step1-select%20ec2.jpg" title="step1">https://github.com/Polkotuwa/linux/blob/master/step1-select%20ec2.jpg</a></p>
+<h3>step2 ### - select launch instance</h3>
+<blockquote>
+<p>We have to click launch instance button in the page.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/linux/blob/master/step2-launch%20instance.jpg" title="step2">https://github.com/Polkotuwa/linux/blob/master/step2-launch%20instance.jpg</a></p>
+<h3>step3 ### - Choose amazon linux ami.</h3>
+<blockquote>
+<p>From Amazon machine images(AMI) we have to select linux support AMI's like Amazon Linux and Red hat.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/linux/blob/master/step3-choose%20amazon%20linux%20ami.jpg" title="step3">https://github.com/Polkotuwa/linux/blob/master/step3-choose%20amazon%20linux%20ami.jpg</a></p>
+<h3>step4 ### - choose instance type.</h3>
+<blockquote>
+<p>Select free tier eligable instance type and click configure instance details button.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/linux/blob/master/step4-Choose%20instance%20type.jpg" title="step4">https://github.com/Polkotuwa/linux/blob/master/step4-Choose%20instance%20type.jpg</a></p>
+<h3>step5 ### - Add storage</h3>
+<blockquote>
+<p>click add storage button without changing details in the add storage page.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/linux/blob/master/step5-Add%20storage.jpg" title="step5">https://github.com/Polkotuwa/linux/blob/master/step5-Add%20storage.jpg</a></p>
+<h3>step6 ### - Click review and launch.</h3>
+<blockquote>
+<p>click review and launch in configure security group page.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/linux/blob/master/step6-Review%20and%20launch.jpg" title="step6">https://github.com/Polkotuwa/linux/blob/master/step6-Review%20and%20launch.jpg</a></p>
+<h3>step7 ### - Launch the instance</h3>
+<blockquote>
+<p>click the launch button to  launch the instance we created.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/linux/blob/master/step7-launch.jpg" title="step7">https://github.com/Polkotuwa/linux/blob/master/step7-launch.jpg</a></p>
+<h3>step8 ### - Create new key pair and download</h3>
+<blockquote>
+<p>AWS public key cryptography to secure login information for our instance.A linux instance has no password.we can use just key pair to login instance securely.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/linux/blob/master/step8-create%20new%20key%20pair%20and%20download.jpg" title="step8">https://github.com/Polkotuwa/linux/blob/master/step8-create%20new%20key%20pair%20and%20download.jpg</a></p>
+<h3>step9 ### - view instance details.</h3>
+<blockquote>
+<p>We can view running instances in instance page.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/linux/blob/master/step9-instance%20details.jpg" title="step9">https://github.com/Polkotuwa/linux/blob/master/step9-instance%20details.jpg</a></p>
+<h3>step10 ### - Downlaod puttygen key generator and run it.</h3>
+<blockquote>
+<p>We need this software to save private key.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/linux/blob/master/step10-run%20Puttygen%20key%20generator.jpg" title="step10">https://github.com/Polkotuwa/linux/blob/master/step10-run%20Puttygen%20key%20generator.jpg</a></p>
+<h3>step11/12 ### - Load .pem file</h3>
+<blockquote>
+<p>click load and locate it.then load it.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/linux/blob/master/step11-loadpem%20file.jpg" title="step11">https://github.com/Polkotuwa/linux/blob/master/step11-loadpem%20file.jpg</a></p>
+<p><a href="https://github.com/Polkotuwa/linux/blob/master/step12-load%20pem%20file.jpg" title="step12">https://github.com/Polkotuwa/linux/blob/master/step12-load%20pem%20file.jpg</a></p>
+<h3>step13/14 ### - Save private key for the linux instance.</h3>
+<blockquote>
+<p>Click save Private key.It displays a warning click yes for it.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/linux/blob/master/step13-save%20private%20key.jpg" title="step13">https://github.com/Polkotuwa/linux/blob/master/step13-save%20private%20key.jpg</a></p>
+<blockquote>
+<p>Then save private key file in .ppk file extension.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/linux/blob/master/step14-saved%20private%20key.jpg" title="step14">https://github.com/Polkotuwa/linux/blob/master/step14-saved%20private%20key.jpg</a></p>
+<h3>step15 ### - Run putty configuration to connect instance.</h3>
+<blockquote>
+<p>We can also connect instance using browser.but alternatively we can connect using putty.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/linux/blob/master/step15-Configure%20using%20Putty%20configuration.jpg" title="step15">https://github.com/Polkotuwa/linux/blob/master/step15-Configure%20using%20Putty%20configuration.jpg</a></p>
+<h3>step16 ### - copy public DNS from the linux instance.</h3>
+<blockquote>
+<p>we can get Public DNS from the amazon instance page.we have to copy it.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/linux/blob/master/step16-copy%20public%20dns%20of%20linux%20instance.jpg" title="step16">https://github.com/Polkotuwa/linux/blob/master/step16-copy%20public%20dns%20of%20linux%20instance.jpg</a></p>
+<h3>step17 ### - Create a seesion.</h3>
+<blockquote>
+<p>copy Public DNS as a hostname and create a new session and save it.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/linux/blob/master/step17-create%20session%20and%20copy%20ip%20address.jpg" title="step17">https://github.com/Polkotuwa/linux/blob/master/step17-create%20session%20and%20copy%20ip%20address.jpg</a></p>
+<h3>step18 ### - Give a login user-name.</h3>
+<blockquote>
+<p>In data give login username as ec2-user.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/linux/blob/master/step18-give%20login%20user%20name.jpg" title="step18">https://github.com/Polkotuwa/linux/blob/master/step18-give%20login%20user%20name.jpg</a></p>
+<h3>step19 ### - Browse for private key file.</h3>
+<blockquote>
+<p>In SSH Auth browse private key file which created by using puttygen key generator and give it.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/linux/blob/master/step19%20-browse%20for%20private%20key%20file.jpg" title="step19">https://github.com/Polkotuwa/linux/blob/master/step19%20-browse%20for%20private%20key%20file.jpg</a></p>
+<h3>step20/21 ### - linux instance.</h3>
+<blockquote>
+<p>Then we can work with linux instance.</p>
+</blockquote>
+<p><a href="https://github.com/Polkotuwa/linux/blob/master/step20-windows%20instance.jpg" title="step20">https://github.com/Polkotuwa/linux/blob/master/step20-windows%20instance.jpg</a></p>
+<p><a href="https://github.com/Polkotuwa/linux/blob/master/step21-updated%20windows%20instance.jpg" title="step21">https://github.com/Polkotuwa/linux/blob/master/step21-updated%20windows%20instance.jpg</a></p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
